@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\QW\server\model.c" />
+    <ClCompile Include="..\QW\server\pr_cmds.c" />
+    <ClCompile Include="..\QW\server\pr_edict.c" />
+    <ClCompile Include="..\QW\server\pr_exec.c" />
+    <ClCompile Include="..\QW\server\sv_ccmds.c" />
+    <ClCompile Include="..\QW\server\sv_ents.c" />
+    <ClCompile Include="..\QW\server\sv_init.c" />
+    <ClCompile Include="..\QW\server\sv_main.c" />
+    <ClCompile Include="..\QW\server\sv_move.c" />
+    <ClCompile Include="..\QW\server\sv_nchan.c" />
+    <ClCompile Include="..\QW\server\sv_phys.c" />
+    <ClCompile Include="..\QW\server\sv_send.c" />
+    <ClCompile Include="..\QW\server\sv_user.c" />
+    <ClCompile Include="..\QW\server\sys_unix.c" />
+    <ClCompile Include="..\QW\server\sys_win.c" />
+    <ClCompile Include="..\QW\server\world.c" />
+    <ClCompile Include="..\QW\client\common.c" />
+    <ClCompile Include="..\QW\client\zone.c" />
+    <ClCompile Include="..\QW\client\cmd.c" />
+    <ClCompile Include="..\QW\client\crc.c" />
+    <ClCompile Include="..\QW\client\cvar.c" />
+    <ClCompile Include="..\QW\client\net_chan.c" />
+    <ClCompile Include="..\QW\client\net_wins.c" />
+    <ClCompile Include="..\QW\client\mathlib.c" />
+    <ClCompile Include="..\QW\client\md4.c" />
+    <ClCompile Include="..\QW\client\pmovetst.c" />
+    <ClCompile Include="..\QW\client\pmove.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\QW\server\asm_i386.h" />
+    <ClInclude Include="..\QW\server\pr_comp.h" />
+    <ClInclude Include="..\QW\server\progdefs.h" />
+    <ClInclude Include="..\QW\server\progs.h" />
+    <ClInclude Include="..\QW\server\quakeasm.h" />
+    <ClInclude Include="..\QW\server\qwsvdef.h" />
+    <ClInclude Include="..\QW\server\server.h" />
+    <ClInclude Include="..\QW\server\sys.h" />
+    <ClInclude Include="..\QW\server\world.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\QW\server\math.s" />
+    <None Include="..\QW\server\worlda.s" />
+  </ItemGroup>
+</Project>

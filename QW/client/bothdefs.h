@@ -25,11 +25,11 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #define LINUX_VERSION 0.98
 
 
-#if (defined(_M_IX86) || defined(__i386__)) && !defined(id386)
-#define id386	1
-#else
+//#if (defined(_M_IX86) || defined(__i386__)) && !defined(id386)
+//#define id386	1
+//#else
 #define id386	0
-#endif
+//#endif
 
 #ifdef SERVERONLY		// no asm in dedicated server
 #undef id386

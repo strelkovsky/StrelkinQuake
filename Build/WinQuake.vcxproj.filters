@@ -108,7 +108,6 @@
     <ClInclude Include="..\WinQuake\keys.h" />
     <ClInclude Include="..\WinQuake\mathlib.h" />
     <ClInclude Include="..\WinQuake\menu.h" />
-    <ClInclude Include="..\WinQuake\model.h" />
     <ClInclude Include="..\WinQuake\modelgen.h" />
     <ClInclude Include="..\WinQuake\mpdosock.h" />
     <ClInclude Include="..\WinQuake\net.h" />
@@ -127,8 +126,6 @@
     <ClInclude Include="..\WinQuake\progs.h" />
     <ClInclude Include="..\WinQuake\protocol.h" />
     <ClInclude Include="..\WinQuake\quakedef.h" />
-    <ClInclude Include="..\WinQuake\r_local.h" />
-    <ClInclude Include="..\WinQuake\r_shared.h" />
     <ClInclude Include="..\WinQuake\render.h" />
     <ClInclude Include="..\WinQuake\resource.h" />
     <ClInclude Include="..\WinQuake\sbar.h" />

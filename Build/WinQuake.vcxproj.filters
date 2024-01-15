@@ -16,7 +16,6 @@
     <ClCompile Include="..\WinQuake\console.c" />
     <ClCompile Include="..\WinQuake\crc.c" />
     <ClCompile Include="..\WinQuake\cvar.c" />
-    <ClCompile Include="..\WinQuake\d_vars.c" />
     <ClCompile Include="..\WinQuake\gl_draw.c" />
     <ClCompile Include="..\WinQuake\gl_mesh.c" />
     <ClCompile Include="..\WinQuake\gl_model.c" />
@@ -58,10 +57,8 @@
     <ClCompile Include="..\WinQuake\pr_edict.c" />
     <ClCompile Include="..\WinQuake\pr_exec.c" />
     <ClCompile Include="..\WinQuake\r_part.c" />
-    <ClCompile Include="..\WinQuake\r_vars.c" />
     <ClCompile Include="..\WinQuake\sbar.c" />
     <ClCompile Include="..\WinQuake\snd_dma.c" />
-    <ClCompile Include="..\WinQuake\snd_gus.c" />
     <ClCompile Include="..\WinQuake\snd_mem.c" />
     <ClCompile Include="..\WinQuake\snd_mix.c" />
     <ClCompile Include="..\WinQuake\snd_null.c" />
@@ -72,11 +69,8 @@
     <ClCompile Include="..\WinQuake\sv_user.c" />
     <ClCompile Include="..\WinQuake\sys_null.c" />
     <ClCompile Include="..\WinQuake\sys_win.c" />
-    <ClCompile Include="..\WinQuake\sys_wind.c" />
     <ClCompile Include="..\WinQuake\vid_null.c" />
-    <ClCompile Include="..\WinQuake\vid_win.c" />
     <ClCompile Include="..\WinQuake\view.c" />
-    <ClCompile Include="..\WinQuake\vregset.c" />
     <ClCompile Include="..\WinQuake\wad.c" />
     <ClCompile Include="..\WinQuake\world.c" />
     <ClCompile Include="..\WinQuake\zone.c" />
@@ -94,8 +88,6 @@
     <ClInclude Include="..\WinQuake\console.h" />
     <ClInclude Include="..\WinQuake\crc.h" />
     <ClInclude Include="..\WinQuake\cvar.h" />
-    <ClInclude Include="..\WinQuake\d_iface.h" />
-    <ClInclude Include="..\WinQuake\d_ifacea.h" />
     <ClInclude Include="..\WinQuake\draw.h" />
     <ClInclude Include="..\WinQuake\gl_model.h" />
     <ClInclude Include="..\WinQuake\gl_warp_sin.h" />
@@ -131,10 +123,8 @@
     <ClInclude Include="..\WinQuake\sound.h" />
     <ClInclude Include="..\WinQuake\spritegn.h" />
     <ClInclude Include="..\WinQuake\sys.h" />
-    <ClInclude Include="..\WinQuake\vgamodes.h" />
     <ClInclude Include="..\WinQuake\vid.h" />
     <ClInclude Include="..\WinQuake\view.h" />
-    <ClInclude Include="..\WinQuake\vregset.h" />
     <ClInclude Include="..\WinQuake\wad.h" />
     <ClInclude Include="..\WinQuake\winquake.h" />
     <ClInclude Include="..\WinQuake\world.h" />

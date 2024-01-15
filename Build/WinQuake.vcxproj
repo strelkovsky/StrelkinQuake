@@ -197,6 +197,7 @@
     <ClCompile Include="..\WinQuake\net_wso.c" />
     <ClCompile Include="..\WinQuake\nonintel.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\WinQuake\pr_cmds.c" />
     <ClCompile Include="..\WinQuake\pr_edict.c" />

@@ -3,7 +3,6 @@
   <ItemGroup>
     <ClCompile Include="..\QW\client\buildnum.c" />
     <ClCompile Include="..\QW\client\cd_audio.c" />
-    <ClCompile Include="..\QW\client\cd_linux.c" />
     <ClCompile Include="..\QW\client\cd_null.c" />
     <ClCompile Include="..\QW\client\cd_win.c" />
     <ClCompile Include="..\QW\client\cl_cam.c" />
@@ -43,10 +42,6 @@
     <ClCompile Include="..\QW\client\gl_rsurf.c" />
     <ClCompile Include="..\QW\client\gl_screen.c" />
     <ClCompile Include="..\QW\client\gl_test.c" />
-    <ClCompile Include="..\QW\client\gl_vidlinux.c" />
-    <ClCompile Include="..\QW\client\gl_vidlinux_svga.c" />
-    <ClCompile Include="..\QW\client\gl_vidlinux_x11.c" />
-    <ClCompile Include="..\QW\client\gl_vidlinuxglx.c" />
     <ClCompile Include="..\QW\client\gl_vidnt.c" />
     <ClCompile Include="..\QW\client\gl_warp.c" />
     <ClCompile Include="..\QW\client\in_null.c" />
@@ -80,17 +75,13 @@
     <ClCompile Include="..\QW\client\screen.c" />
     <ClCompile Include="..\QW\client\skin.c" />
     <ClCompile Include="..\QW\client\snd_dma.c" />
-    <ClCompile Include="..\QW\client\snd_linux.c" />
     <ClCompile Include="..\QW\client\snd_mem.c" />
     <ClCompile Include="..\QW\client\snd_mix.c" />
     <ClCompile Include="..\QW\client\snd_win.c" />
-    <ClCompile Include="..\QW\client\sys_linux.c" />
     <ClCompile Include="..\QW\client\sys_null.c" />
     <ClCompile Include="..\QW\client\sys_win.c" />
     <ClCompile Include="..\QW\client\vid_null.c" />
-    <ClCompile Include="..\QW\client\vid_svgalib.c" />
     <ClCompile Include="..\QW\client\vid_win.c" />
-    <ClCompile Include="..\QW\client\vid_x.c" />
     <ClCompile Include="..\QW\client\view.c" />
     <ClCompile Include="..\QW\client\wad.c" />
     <ClCompile Include="..\QW\client\zone.c" />
@@ -99,10 +90,6 @@
     <ClInclude Include="..\QW\client\adivtab.h" />
     <ClInclude Include="..\QW\client\anorm_dots.h" />
     <ClInclude Include="..\QW\client\anorms.h" />
-    <ClInclude Include="..\QW\client\asm_draw.h" />
-    <ClInclude Include="..\QW\client\asm_i386.h" />
-    <ClInclude Include="..\QW\client\block8.h" />
-    <ClInclude Include="..\QW\client\block16.h" />
     <ClInclude Include="..\QW\client\bothdefs.h" />
     <ClInclude Include="..\QW\client\bspfile.h" />
     <ClInclude Include="..\QW\client\cdaudio.h" />
@@ -129,7 +116,6 @@
     <ClInclude Include="..\QW\client\net.h" />
     <ClInclude Include="..\QW\client\pmove.h" />
     <ClInclude Include="..\QW\client\protocol.h" />
-    <ClInclude Include="..\QW\client\quakeasm.h" />
     <ClInclude Include="..\QW\client\quakedef.h" />
     <ClInclude Include="..\QW\client\r_local.h" />
     <ClInclude Include="..\QW\client\r_shared.h" />
@@ -145,28 +131,6 @@
     <ClInclude Include="..\QW\client\wad.h" />
     <ClInclude Include="..\QW\client\winquake.h" />
     <ClInclude Include="..\QW\client\zone.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\QW\client\qwcl.mak" />
-    <None Include="..\QW\client\d_copy.s" />
-    <None Include="..\QW\client\d_draw.s" />
-    <None Include="..\QW\client\d_draw16.s" />
-    <None Include="..\QW\client\d_parta.s" />
-    <None Include="..\QW\client\d_polysa.s" />
-    <None Include="..\QW\client\d_scana.s" />
-    <None Include="..\QW\client\d_spr8.s" />
-    <None Include="..\QW\client\d_varsa.s" />
-    <None Include="..\QW\client\math.s" />
-    <None Include="..\QW\client\r_aclipa.s" />
-    <None Include="..\QW\client\r_aliasa.s" />
-    <None Include="..\QW\client\r_drawa.s" />
-    <None Include="..\QW\client\r_edgea.s" />
-    <None Include="..\QW\client\r_varsa.s" />
-    <None Include="..\QW\client\snd_mixa.s" />
-    <None Include="..\QW\client\surf8.s" />
-    <None Include="..\QW\client\surf16.s" />
-    <None Include="..\QW\client\sys_dosa.s" />
-    <None Include="..\QW\client\sys_wina.s" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\QW\client\winquake.rc" />

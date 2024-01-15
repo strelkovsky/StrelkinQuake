@@ -421,8 +421,6 @@ IN_StartupMouse
 */
 void IN_StartupMouse (void)
 {
-	HDC			hdc;
-
 	if ( COM_CheckParm ("-nomouse") ) 
 		return; 
 
@@ -580,7 +578,6 @@ IN_MouseMove
 void IN_MouseMove (usercmd_t *cmd)
 {
 	int					mx, my;
-	HDC					hdc;
 	int					i;
 	DIDEVICEOBJECTDATA	od;
 	DWORD				dwElements;
@@ -752,9 +749,6 @@ IN_Accumulate
 */
 void IN_Accumulate (void)
 {
-	int		mx, my;
-	HDC	hdc;
-
 	if (mouseactive)
 	{
 		if (!dinput)
@@ -795,7 +789,7 @@ IN_StartupJoystick
 */  
 void IN_StartupJoystick (void) 
 { 
-	int			i, numdevs;
+	int			numdevs;
 	JOYCAPS		jc;
 	MMRESULT	mmr;
  

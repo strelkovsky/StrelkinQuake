@@ -133,10 +133,6 @@
     <ClInclude Include="..\WinQuake\adivtab.h" />
     <ClInclude Include="..\WinQuake\anorm_dots.h" />
     <ClInclude Include="..\WinQuake\anorms.h" />
-    <ClInclude Include="..\WinQuake\asm_draw.h" />
-    <ClInclude Include="..\WinQuake\asm_i386.h" />
-    <ClInclude Include="..\WinQuake\block8.h" />
-    <ClInclude Include="..\WinQuake\block16.h" />
     <ClInclude Include="..\WinQuake\bspfile.h" />
     <ClInclude Include="..\WinQuake\cdaudio.h" />
     <ClInclude Include="..\WinQuake\client.h" />
@@ -177,7 +173,6 @@
     <ClInclude Include="..\WinQuake\progdefs.h" />
     <ClInclude Include="..\WinQuake\progs.h" />
     <ClInclude Include="..\WinQuake\protocol.h" />
-    <ClInclude Include="..\WinQuake\quakeasm.h" />
     <ClInclude Include="..\WinQuake\quakedef.h" />
     <ClInclude Include="..\WinQuake\r_local.h" />
     <ClInclude Include="..\WinQuake\r_shared.h" />
@@ -201,28 +196,5 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\WinQuake\winquake.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\WinQuake\d_copy.s" />
-    <None Include="..\WinQuake\d_draw.s" />
-    <None Include="..\WinQuake\d_draw16.s" />
-    <None Include="..\WinQuake\d_parta.s" />
-    <None Include="..\WinQuake\d_polysa.s" />
-    <None Include="..\WinQuake\d_scana.s" />
-    <None Include="..\WinQuake\d_spr8.s" />
-    <None Include="..\WinQuake\d_varsa.s" />
-    <None Include="..\WinQuake\dosasm.s" />
-    <None Include="..\WinQuake\math.s" />
-    <None Include="..\WinQuake\r_aclipa.s" />
-    <None Include="..\WinQuake\r_aliasa.s" />
-    <None Include="..\WinQuake\r_drawa.s" />
-    <None Include="..\WinQuake\r_edgea.s" />
-    <None Include="..\WinQuake\r_varsa.s" />
-    <None Include="..\WinQuake\snd_mixa.s" />
-    <None Include="..\WinQuake\surf8.s" />
-    <None Include="..\WinQuake\surf16.s" />
-    <None Include="..\WinQuake\sys_dosa.s" />
-    <None Include="..\WinQuake\sys_wina.s" />
-    <None Include="..\WinQuake\worlda.s" />
   </ItemGroup>
 </Project>

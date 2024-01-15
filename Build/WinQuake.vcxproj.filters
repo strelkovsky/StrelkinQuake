@@ -73,10 +73,7 @@
     <ClCompile Include="..\WinQuake\sys_null.c" />
     <ClCompile Include="..\WinQuake\sys_win.c" />
     <ClCompile Include="..\WinQuake\sys_wind.c" />
-    <ClCompile Include="..\WinQuake\vid_ext.c" />
     <ClCompile Include="..\WinQuake\vid_null.c" />
-    <ClCompile Include="..\WinQuake\vid_svgalib.c" />
-    <ClCompile Include="..\WinQuake\vid_vga.c" />
     <ClCompile Include="..\WinQuake\vid_win.c" />
     <ClCompile Include="..\WinQuake\view.c" />
     <ClCompile Include="..\WinQuake\vregset.c" />

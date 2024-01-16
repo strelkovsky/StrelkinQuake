@@ -74,6 +74,9 @@
     <ClCompile Include="..\WinQuake\wad.c" />
     <ClCompile Include="..\WinQuake\world.c" />
     <ClCompile Include="..\WinQuake\zone.c" />
+    <ClCompile Include="..\WinQuake\in_sdl.c" />
+    <ClCompile Include="..\WinQuake\vid_sdl.c" />
+    <ClCompile Include="..\WinQuake\sys_sdl.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\WinQuake\adivtab.h" />

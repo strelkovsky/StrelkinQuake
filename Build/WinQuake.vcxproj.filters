@@ -35,8 +35,6 @@
     <ClCompile Include="..\WinQuake\keys.c" />
     <ClCompile Include="..\WinQuake\mathlib.c" />
     <ClCompile Include="..\WinQuake\menu.c" />
-    <ClCompile Include="..\WinQuake\mplib.c" />
-    <ClCompile Include="..\WinQuake\mplpc.c" />
     <ClCompile Include="..\WinQuake\net_bw.c" />
     <ClCompile Include="..\WinQuake\net_comx.c" />
     <ClCompile Include="..\WinQuake\net_dgrm.c" />

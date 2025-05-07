@@ -962,8 +962,8 @@ void AppActivate(BOOL fActive, BOOL minimize)
 			IN_HideMouse ();
 			if (vid_canalttab && vid_wassuspended) {
 				vid_wassuspended = false;
-				ChangeDisplaySettings (&gdevmode, CDS_FULLSCREEN);
-				ShowWindow(mainwindow, SW_SHOWNORMAL);
+				//ChangeDisplaySettings (&gdevmode, CDS_FULLSCREEN);
+				//ShowWindow(mainwindow, SW_SHOWNORMAL);
 			}
 		}
 		else if ((modestate == MS_WINDOWED) && _windowed_mouse.value && key_dest == key_game)
@@ -1347,6 +1347,10 @@ void VID_InitFullDIB (HINSTANCE hInstance)
 	int		i, modenum, originalnummodes, existingmode, numlowresmodes;
 	int		j, bpp, done;
 	BOOL	stat;
+
+	// SKIP real fullscreen mode init
+	Con_SafePrintf("Skipping EnumDisplaySettings and fullscreen mode setup\n");
+	return;
 
 // enumerate >8 bpp modes
 	originalnummodes = nummodes;

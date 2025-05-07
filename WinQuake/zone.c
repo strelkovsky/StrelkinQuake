@@ -139,7 +139,7 @@ void Z_Free (void *ptr)
 Z_Malloc
 ========================
 */
-void *Z_Malloc (int size)
+void *Z_Malloc (size_t size)
 {
 	void	*buf;
 	
@@ -152,7 +152,7 @@ Z_CheckHeap ();	// DEBUG
 	return buf;
 }
 
-void *Z_TagMalloc (int size, int tag)
+void *Z_TagMalloc (size_t size, int tag)
 {
 	int		extra;
 	memblock_t	*start, *rover, *new, *base;

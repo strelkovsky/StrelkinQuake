@@ -110,7 +110,6 @@ int Scrap_AllocBlock (int w, int h, int *x, int *y)
 {
 	int		i, j;
 	int		best, best2;
-	int		bestx;
 	int		texnum;
 
 	for (texnum=0 ; texnum<MAX_SCRAPS ; texnum++)
@@ -369,14 +368,13 @@ void Draw_Init (void)
 {
 	int		i;
 	qpic_t	*cb;
-	byte	*dest, *src;
-	int		x, y;
+	byte	*dest;
+	size_t y;
+	int		x;
 	char	ver[40];
 	glpic_t	*gl;
 	int		start;
 	byte	*ncdata;
-	int		f, fstep;
-
 
 	Cvar_RegisterVariable (&gl_nobind);
 	Cvar_RegisterVariable (&gl_max_size);
@@ -409,50 +407,16 @@ void Draw_Init (void)
 	SwapPic (cb);
 
 	// hack the version number directly into the pic
-#if defined(__linux__)
-	sprintf (ver, "(Linux %2.2f, gl %4.2f) %4.2f", (float)LINUX_VERSION, (float)GLQUAKE_VERSION, (float)VERSION);
-#else
 	sprintf (ver, "(gl %4.2f) %4.2f", (float)GLQUAKE_VERSION, (float)VERSION);
-#endif
+
 	dest = cb->data + 320*186 + 320 - 11 - 8*strlen(ver);
 	y = strlen(ver);
 	for (x=0 ; x<y ; x++)
 		Draw_CharToConback (ver[x], dest+(x<<3));
 
-#if 0
-	conback->width = vid.conwidth;
-	conback->height = vid.conheight;
-
- 	// scale console to vid size
- 	dest = ncdata = Hunk_AllocName(vid.conwidth * vid.conheight, "conback");
- 
- 	for (y=0 ; y<vid.conheight ; y++, dest += vid.conwidth)
- 	{
- 		src = cb->data + cb->width * (y*cb->height/vid.conheight);
- 		if (vid.conwidth == cb->width)
- 			memcpy (dest, src, vid.conwidth);
- 		else
- 		{
- 			f = 0;
- 			fstep = cb->width*0x10000/vid.conwidth;
- 			for (x=0 ; x<vid.conwidth ; x+=4)
- 			{
- 				dest[x] = src[f>>16];
- 				f += fstep;
- 				dest[x+1] = src[f>>16];
- 				f += fstep;
- 				dest[x+2] = src[f>>16];
- 				f += fstep;
- 				dest[x+3] = src[f>>16];
- 				f += fstep;
- 			}
- 		}
- 	}
-#else
 	conback->width = cb->width;
 	conback->height = cb->height;
 	ncdata = cb->data;
-#endif
 
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
@@ -495,11 +459,7 @@ smoothly scrolled off.
 ================
 */
 void Draw_Character (int x, int y, int num)
-{
-	byte			*dest;
-	byte			*source;
-	unsigned short	*pusdest;
-	int				drawline;	
+{	
 	int				row, col;
 	float			frow, fcol, size;
 
@@ -567,9 +527,6 @@ Draw_AlphaPic
 */
 void Draw_AlphaPic (int x, int y, qpic_t *pic, float alpha)
 {
-	byte			*dest, *source;
-	unsigned short	*pusdest;
-	int				v, u;
 	glpic_t			*gl;
 
 	if (scrap_dirty)
@@ -604,9 +561,6 @@ Draw_Pic
 */
 void Draw_Pic (int x, int y, qpic_t *pic)
 {
-	byte			*dest, *source;
-	unsigned short	*pusdest;
-	int				v, u;
 	glpic_t			*gl;
 
 	if (scrap_dirty)
@@ -634,10 +588,6 @@ Draw_TransPic
 */
 void Draw_TransPic (int x, int y, qpic_t *pic)
 {
-	byte	*dest, *source, tbyte;
-	unsigned short	*pusdest;
-	int				v, u;
-
 	if (x < 0 || (unsigned)(x + pic->width) > vid.width || y < 0 ||
 		 (unsigned)(y + pic->height) > vid.height)
 	{
@@ -778,7 +728,7 @@ void Draw_FadeScreen (void)
 {
 	glEnable (GL_BLEND);
 	glDisable (GL_TEXTURE_2D);
-	glColor4f (0, 0, 0, 0.8);
+	glColor4f (0.0f, 0.0f, 0.0f, 0.8f);
 	glBegin (GL_QUADS);
 
 	glVertex2f (0,0);
@@ -1090,7 +1040,6 @@ void GL_Upload8_EXT (byte *data, int width, int height,  qboolean mipmap, qboole
 {
 	int			i, s;
 	qboolean	noalpha;
-	int			p;
 	static unsigned j;
 	int			samples;
     static	unsigned char scaled[1024*512];	// [512*256];
@@ -1233,8 +1182,7 @@ GL_LoadTexture
 */
 int GL_LoadTexture (char *identifier, int width, int height, byte *data, qboolean mipmap, qboolean alpha)
 {
-	qboolean	noalpha;
-	int			i, p, s;
+	int			i;
 	gltexture_t	*glt;
 
 	// see if the texture is allready present

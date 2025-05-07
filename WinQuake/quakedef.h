@@ -205,10 +205,6 @@ void	VID_UnlockBuffer (void);
 
 #define	SOUND_CHANNELS		8
 
-// This makes anyone on id's net privileged
-// Use for multiplayer testing only - VERY dangerous!!!
-// #define IDGODS
-
 #include "common.h"
 #include "bspfile.h"
 #include "vid.h"
@@ -242,12 +238,7 @@ typedef struct
 #include "progs.h"
 #include "server.h"
 
-#ifdef GLQUAKE
 #include "gl_model.h"
-#else
-#include "model.h"
-#include "d_iface.h"
-#endif
 
 #include "input.h"
 #include "world.h"
@@ -258,9 +249,7 @@ typedef struct
 #include "crc.h"
 #include "cdaudio.h"
 
-#ifdef GLQUAKE
 #include "glquake.h"
-#endif
 
 //=============================================================================
 

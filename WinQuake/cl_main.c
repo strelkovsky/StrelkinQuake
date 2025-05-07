@@ -400,16 +400,16 @@ float	CL_LerpPoint (void)
 		return 1;
 	}
 		
-	if (f > 0.1)
+	if (f > 0.1f)
 	{	// dropped packet, or start of demo
 		cl.mtime[1] = cl.mtime[0] - 0.1;
-		f = 0.1;
+		f = 0.1f;
 	}
 	frac = (cl.time - cl.mtime[1]) / f;
 //Con_Printf ("frac: %f\n",frac);
 	if (frac < 0)
 	{
-		if (frac < -0.01)
+		if (frac < -0.01f)
 		{
 SetPal(1);
 			cl.time = cl.mtime[1];
@@ -417,9 +417,9 @@ SetPal(1);
 		}
 		frac = 0;
 	}
-	else if (frac > 1)
+	else if (frac > 1.0f)
 	{
-		if (frac > 1.01)
+		if (frac > 1.01f)
 		{
 SetPal(2);
 			cl.time = cl.mtime[0];

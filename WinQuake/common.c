@@ -135,11 +135,11 @@ void InsertLinkAfter (link_t *l, link_t *after)
 ============================================================================
 */
 
-void Q_memset (void *dest, int fill, int count)
+void Q_memset (void *dest, int fill, size_t count)
 {
 	int             i;
 	
-	if ( (((long)dest | count) & 3) == 0)
+	if ( (((intptr_t)dest | count) & 3) == 0)
 	{
 		count >>= 2;
 		fill = fill | (fill<<8) | (fill<<16) | (fill<<24);
@@ -155,7 +155,7 @@ void Q_memcpy (void *dest, void *src, int count)
 {
 	int             i;
 	
-	if (( ( (long)dest | (long)src | count) & 3) == 0 )
+	if (( ( (intptr_t)dest | (intptr_t)src | count) & 3) == 0 )
 	{
 		count>>=2;
 		for (i=0 ; i<count ; i++)
@@ -1729,9 +1729,10 @@ void COM_AddGameDirectory (char *dir)
 COM_InitFilesystem
 ================
 */
-void COM_InitFilesystem (void)
+void COM_InitFilesystem()
 {
-	int             i, j;
+	size_t j;
+	int             i;
 	char    basedir[MAX_OSPATH];
 	searchpath_t    *search;
 

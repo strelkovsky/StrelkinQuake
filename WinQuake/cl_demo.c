@@ -89,7 +89,10 @@ Handles recording and playback of demos, on top of NET_ code
 */
 int CL_GetMessage (void)
 {
-	int		r, i;
+	size_t fread_result;
+	int net_result;
+
+	int		i;
 	float	f;
 	
 	if	(cls.demoplayback)
@@ -118,15 +121,15 @@ int CL_GetMessage (void)
 		VectorCopy (cl.mviewangles[0], cl.mviewangles[1]);
 		for (i=0 ; i<3 ; i++)
 		{
-			r = fread (&f, 4, 1, cls.demofile);
+			fread_result = fread (&f, 4, 1, cls.demofile);
 			cl.mviewangles[0][i] = LittleFloat (f);
 		}
 		
 		net_message.cursize = LittleLong (net_message.cursize);
 		if (net_message.cursize > MAX_MSGLEN)
 			Sys_Error ("Demo message > MAX_MSGLEN");
-		r = fread (net_message.data, net_message.cursize, 1, cls.demofile);
-		if (r != 1)
+		fread_result = fread (net_message.data, net_message.cursize, 1, cls.demofile);
+		if (fread_result != 1)
 		{
 			CL_StopPlayback ();
 			return 0;
@@ -137,10 +140,10 @@ int CL_GetMessage (void)
 
 	while (1)
 	{
-		r = NET_GetMessage (cls.netcon);
+		net_result = NET_GetMessage (cls.netcon);
 		
-		if (r != 1 && r != 2)
-			return r;
+		if (net_result != 1 && net_result != 2)
+			return net_result;
 	
 	// discard nop keepalive message
 		if (net_message.cursize == 1 && net_message.data[0] == svc_nop)
@@ -152,7 +155,7 @@ int CL_GetMessage (void)
 	if (cls.demorecording)
 		CL_WriteDemoMessage ();
 	
-	return r;
+	return net_result;
 }
 
 

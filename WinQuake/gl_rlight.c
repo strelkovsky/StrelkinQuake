@@ -84,16 +84,16 @@ void R_RenderDlight (dlight_t *light)
 	VectorSubtract (light->origin, r_origin, v);
 	if (Length (v) < rad)
 	{	// view is inside the dlight
-		AddLightBlend (1, 0.5, 0, light->radius * 0.0003);
+		AddLightBlend (1.0f, 0.5f, 0.0f, light->radius * 0.0003f);
 		return;
 	}
 
 	glBegin (GL_TRIANGLE_FAN);
-	glColor3f (0.2,0.1,0.0);
+	glColor3f (0.2f, 0.1f, 0.0f);
 	for (i=0 ; i<3 ; i++)
 		v[i] = light->origin[i] - vpn[i]*rad;
 	glVertex3fv (v);
-	glColor3f (0,0,0);
+	glColor3f (0.0f, 0.0f, 0.0f);
 	for (i=16 ; i>=0 ; i--)
 	{
 		a = i/16.0 * M_PI*2;

@@ -30,10 +30,6 @@ typedef unsigned long   u_long;
  */
 typedef u_int           SOCKET;
 
-// FIXME
-#if 0
-#endif
-
 /*
  * Commands for ioctlsocket(),  taken from the BSD file fcntl.h.
  *
@@ -558,51 +554,6 @@ struct  linger {
 #define WSANO_ADDRESS           WSANO_DATA
 #define NO_ADDRESS              WSANO_ADDRESS
 
-/*
- * Windows Sockets errors redefined as regular Berkeley error constants.
- * These are commented out in Windows NT to avoid conflicts with errno.h.
- * Use the WSA constants instead.
- */
-#if 0
-#define EWOULDBLOCK             WSAEWOULDBLOCK
-#define EINPROGRESS             WSAEINPROGRESS
-#define EALREADY                WSAEALREADY
-#define ENOTSOCK                WSAENOTSOCK
-#define EDESTADDRREQ            WSAEDESTADDRREQ
-#define EMSGSIZE                WSAEMSGSIZE
-#define EPROTOTYPE              WSAEPROTOTYPE
-#define ENOPROTOOPT             WSAENOPROTOOPT
-#define EPROTONOSUPPORT         WSAEPROTONOSUPPORT
-#define ESOCKTNOSUPPORT         WSAESOCKTNOSUPPORT
-#define EOPNOTSUPP              WSAEOPNOTSUPP
-#define EPFNOSUPPORT            WSAEPFNOSUPPORT
-#define EAFNOSUPPORT            WSAEAFNOSUPPORT
-#define EADDRINUSE              WSAEADDRINUSE
-#define EADDRNOTAVAIL           WSAEADDRNOTAVAIL
-#define ENETDOWN                WSAENETDOWN
-#define ENETUNREACH             WSAENETUNREACH
-#define ENETRESET               WSAENETRESET
-#define ECONNABORTED            WSAECONNABORTED
-#define ECONNRESET              WSAECONNRESET
-#define ENOBUFS                 WSAENOBUFS
-#define EISCONN                 WSAEISCONN
-#define ENOTCONN                WSAENOTCONN
-#define ESHUTDOWN               WSAESHUTDOWN
-#define ETOOMANYREFS            WSAETOOMANYREFS
-#define ETIMEDOUT               WSAETIMEDOUT
-#define ECONNREFUSED            WSAECONNREFUSED
-#define ELOOP                   WSAELOOP
-#define ENAMETOOLONG            WSAENAMETOOLONG
-#define EHOSTDOWN               WSAEHOSTDOWN
-#define EHOSTUNREACH            WSAEHOSTUNREACH
-#define ENOTEMPTY               WSAENOTEMPTY
-#define EPROCLIM                WSAEPROCLIM
-#define EUSERS                  WSAEUSERS
-#define EDQUOT                  WSAEDQUOT
-#define ESTALE                  WSAESTALE
-#define EREMOTE                 WSAEREMOTE
-#endif
-
 /* Socket function prototypes */
 
 #ifdef __cplusplus
@@ -647,11 +598,6 @@ int PASCAL FAR recv (SOCKET s, char FAR * buf, int len, int flags);
 
 int PASCAL FAR recvfrom (SOCKET s, char FAR * buf, int len, int flags,
                          struct sockaddr FAR *from, int FAR * fromlen);
-
-#if 0
-int PASCAL FAR select (int nfds, fd_set FAR *readfds, fd_set FAR *writefds,
-                       fd_set FAR *exceptfds, const struct timeval FAR *timeout);
-#endif
 
 int PASCAL FAR send (SOCKET s, const char FAR * buf, int len, int flags);
 

@@ -70,7 +70,7 @@ Sys_PageIn
 void Sys_PageIn (void *ptr, int size)
 {
 	byte	*x;
-	int		j, m, n;
+	int		m, n;
 
 // touch all the memory to make sure it's there. The 16-page skip is to
 // keep Win 95 from thinking we're trying to page ourselves in (we are
@@ -201,9 +201,10 @@ void Sys_FileSeek (int handle, int position)
 	VID_ForceLockState (t);
 }
 
-int Sys_FileRead (int handle, void *dest, int count)
+size_t Sys_FileRead (int handle, void *dest, int count)
 {
-	int		t, x;
+	size_t x;
+	int		t;
 
 	t = VID_ForceUnlockedAndReturnState ();
 	x = fread (dest, 1, count, sys_handles[handle]);
@@ -211,9 +212,10 @@ int Sys_FileRead (int handle, void *dest, int count)
 	return x;
 }
 
-int Sys_FileWrite (int handle, void *data, int count)
+size_t Sys_FileWrite (int handle, void *data, int count)
 {
-	int		t, x;
+	size_t x;
+	int		t;
 
 	t = VID_ForceUnlockedAndReturnState ();
 	x = fwrite (data, 1, count, sys_handles[handle]);
@@ -559,8 +561,7 @@ char *Sys_ConsoleInput (void)
 	static char	text[256];
 	static int		len;
 	INPUT_RECORD	recs[1024];
-	int		count;
-	int		i, dummy;
+	int		dummy;
 	int		ch, numread, numevents;
 
 	if (!isDedicated)
@@ -693,7 +694,6 @@ HWND		hwnd_dialog;
 
 int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-    MSG				msg;
 	quakeparms_t	parms;
 	double			time, oldtime, newtime;
 	MEMORYSTATUS	lpBuffer;

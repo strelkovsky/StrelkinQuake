@@ -20,6 +20,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 // in_win.c -- windows 95 mouse and joystick code
 // 02/21/97 JCB Added extended DirectInput code to support external controllers.
 
+#define DIRECTINPUT_VERSION  0x0800
+
 #include <initguid.h>
 
 #include <dinput.h>
@@ -423,8 +425,6 @@ IN_StartupMouse
 */
 void IN_StartupMouse (void)
 {
-	HDC			hdc;
-
 	if ( COM_CheckParm ("-nomouse") ) 
 		return; 
 
@@ -582,7 +582,6 @@ IN_MouseMove
 void IN_MouseMove (usercmd_t *cmd)
 {
 	int					mx, my;
-	HDC					hdc;
 	int					i;
 	DIDEVICEOBJECTDATA	od;
 	DWORD				dwElements;
@@ -754,9 +753,6 @@ IN_Accumulate
 */
 void IN_Accumulate (void)
 {
-	int		mx, my;
-	HDC	hdc;
-
 	if (mouseactive)
 	{
 		if (!dinput)
@@ -797,7 +793,7 @@ IN_StartupJoystick
 */  
 void IN_StartupJoystick (void) 
 { 
-	int			i, numdevs;
+	int			numdevs;
 	JOYCAPS		jc;
 	MMRESULT	mmr;
  
@@ -881,6 +877,8 @@ PDWORD RawValuePointer (int axis)
 	case JOY_AXIS_V:
 		return &ji.dwVpos;
 	}
+
+	return NULL;
 }
 
 

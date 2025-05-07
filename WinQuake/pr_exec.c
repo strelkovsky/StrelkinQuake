@@ -149,7 +149,7 @@ PR_PrintStatement
 */
 void PR_PrintStatement (dstatement_t *s)
 {
-	int		i;
+	size_t		i;
 	
 	if ( (unsigned)s->op < sizeof(pr_opnames)/sizeof(pr_opnames[0]))
 	{
